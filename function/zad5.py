@@ -1,7 +1,11 @@
-def calc_average(lst):
-    return sum(lst) / len(lst)
+def calc_average(lst :iter) ->float:
+    suma = 0
+    for i in lst:
+        suma += i
+    return suma/len(lst)
+    #return sum(lst) / len(lst)
 
-def determine_grade(grade):
+def determine_grade(grade :int) -> int:
     if grade >= 90:
         return 5
     elif grade >= 80:
@@ -18,7 +22,7 @@ while i < 5:
     i += 1
     try:
         value = int(input(f"[{i}] Podaj wyniki z 5 sprawdzianów: "))
-        if 0 < value < 7:
+        if 0 < value <= 100:
             lst.append(value)
         else: raise ValueError
     except ValueError:
@@ -26,5 +30,5 @@ while i < 5:
         i -= 1
 
 for i in range(len(lst)):
-    print(f"Ocena dla sprawdzianu numer {i+1} wynosi: {lst[i]}")
+    print(f"Ocena dla sprawdzianu numer {i+1} wynosi: {determine_grade(lst[i])}")
 print(f"Średnia z 5 sprawdzianów wynosi: {calc_average(lst):.2f}")
