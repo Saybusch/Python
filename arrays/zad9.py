@@ -1,38 +1,33 @@
 import random
-ls = [random.choice([-1, 1]) * random.randint(1000,9999) for x in range(30)]
+ls = [random.choice([-1, 1]) * random.randint(1000,9999) for x in range(60)]
 def findhigherlower(number):
-    check = number % 10
-    number //= 10
-    next = number % 10
-    if check > next:
-        while number > 0:
-            check = number % 10
-            if check < next:
-                number //= 10
-                continue
-            elif check > next:
+    if (number[0] > number[1]):
+        for i in range(1, len(number) - 1):
+            if (number[i] <= number[i + 1]):
                 return -1
-        return 1
-    elif check < next:
-        while number > 0:
-            check = number % 10
-            if check > next:
-                number //= 10
-                continue
-            elif check < next:
+            else:
+                if i == len(number) - 2:
+                    return 0
+    elif (number[0] < number[1]):
+        for i in range(1, len(number) - 1):
+            if (number[i] >= number[i + 1]):
                 return -1
-        return 0
+            else:
+                if i == len(number) - 2:
+                    return 1
     else:
         return -1
 
 print(ls)
-higher = 0; lower = 0; none = 0
+rising = 0; falling = 0; none = 0
 for i in ls:
-    returner = findhigherlower(abs(i))
+    returner = findhigherlower(str(abs(i)))
     if returner == -1:
         none +=1
     elif returner == 0:
-        lower +=1
+        falling +=1
+        print(i, returner)
     elif returner == 1:
-        higher +=1
-print(higher, lower, none)
+        print(i, returner)
+        rising +=1
+print(rising, falling, none)
