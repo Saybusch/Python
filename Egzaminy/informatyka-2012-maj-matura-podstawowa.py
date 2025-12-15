@@ -1,28 +1,20 @@
 def checksum(maximum, minimum, n):
-    value_max = maximum; value_min = minimum; value = n
     sum_max = 0; sum_min = 0; sum_n = 0
-    while maximum > 0:
-        sum_max += maximum % 10
-        maximum /= 10
-    while minimum > 0:
-        sum_min += minimum % 10
-        minimum /= 10
-    while n > 0:
-        sum_n += n % 10
-        n /= 10
+    for x in str(maximum):
+        sum_max += int(x)
+    for x in str(minimum):
+        sum_min += int(x)
+    for x in str(n):
+        sum_n += int(x)
     if sum_max < sum_n:
-        value_max = value
+        maximum = n
     if sum_min > sum_n:
-        value_min = value
-    return value_max, value_min
+        minimum = n
+    return maximum, minimum
 def checkciag(n):
-    last = n % 10
-    n //= 10
-    while n > 0:
-        if n % 10 >= last:
+    for x in range(len(n) - 1):
+        if n[x] >= n[x + 1]:
             return False
-        last = n % 10
-        n //= 10
     return True
 ls = []
 with open("cyfry.txt", "r") as f:
@@ -32,14 +24,13 @@ with open("zadanie4.txt", "w") as f:
     ls_ciag = []
     c = 0
     maxim = 0
-    minim = 99999999
+    minim = 9**99
     for i in range(len(ls)):
         if ls[i] % 2 == 0:
             c+=1
         maxim, minim = checksum(maxim, minim, ls[i])
-        if checkciag(ls[i]):
-            ls_ciag.append(ls[i])
+        if checkciag(str(ls[i])):
+            ls_ciag.append(str(ls[i]))
     f.write(f"1. {str(c)}\n")
     f.write(f"2. Max: {str(maxim)} Min: {str(minim)}\n")
-    print(ls_ciag)
-    f.write(f"3. {ls_ciag}")
+    f.write(f"3. {", ".join(ls_ciag)}")
