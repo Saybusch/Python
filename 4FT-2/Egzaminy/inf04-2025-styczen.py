@@ -1,20 +1,21 @@
 class Urzadzenia:
-    def komunikat(self, message):
+    def komunikat(self, message: str):
         print(message)
 class Pralka(Urzadzenia):
     def __init__(self):
         self.__numerProgramuPrania = 0
-    def ustawProgram(self, number):
+    def ustawProgram(self, number: int) -> int:
         if 1 <= number <= 12:
             self.__numerProgramuPrania = number
             self.komunikat("Program został ustawiony")
         else:
             self.__numerProgramuPrania = 0
             self.komunikat("Podano niepoprawny numer programu")
+        return self.__numerProgramuPrania
 
 class Odkurzacz(Urzadzenia):
     def __init__(self):
-        self.__state = False
+        self.__state: bool = False
     def on(self):
         if not self.__state:
             self.__state = True
