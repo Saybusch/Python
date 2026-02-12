@@ -1,3 +1,13 @@
+'''
+************************************************
+nazwa:                  komunikat
+opis:                   Wypisuje w konsoli wiadomość podaną przez użytkownika
+parametry:              self - instancja klasy na której wywołano metodę
+                        message - wiadomość typu napisowego (string) którą podał użytkownik
+zwracany typ i opis:    brak
+autor:                  12345678910
+************************************************
+'''
 class Urzadzenia:
     def komunikat(self, message: str):
         print(message)
