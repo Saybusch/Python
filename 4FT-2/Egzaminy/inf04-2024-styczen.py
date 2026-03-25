@@ -1,17 +1,15 @@
 '''
 ************************************************
- nazwa: <tu wstaw nazwę funkcji / metody>
- opis: <co wykonuje funkcja / metoda?>
- parametry: <opis parametru1, lub „brak”>
-<opis parametru2>
-...
- zwracany typ i opis:<nazwa typu i opis co jest zwracane lub „brak”>
- autor: <numer zdającego>
+ nazwa:                 losuj
+ opis:                  Funkcja losuje daną ilość losowych liczb od 1 do 6 i wpisuje je do tablicy
+ parametry:             amount - ilość liczb do wylosowania
+ zwracany typ i opis:   array (tablica) - zwraca tablicę zapełnioną wegenerowanymi losowymi liczbami
+ autor:                 12345678910
 ************************************************
 '''
 
 import random
-def losuj(amount):
+def losuj(amount) -> list:
     tablica = []
     for i in range(amount):
         tablica.append(random.randint(1, 6))
