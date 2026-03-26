@@ -3,7 +3,7 @@
  nazwa:                 losuj
  opis:                  Funkcja losuje daną ilość losowych liczb od 1 do 6 i wpisuje je do tablicy
  parametry:             amount - ilość liczb do wylosowania
- zwracany typ i opis:   array (tablica) - zwraca tablicę zapełnioną wegenerowanymi losowymi liczbami
+ zwracany typ i opis:   list (tablica) - zwraca tablicę zapełnioną wygenerowanymi losowymi liczbami
  autor:                 12345678910
 ************************************************
 '''
