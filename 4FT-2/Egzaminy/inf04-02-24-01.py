@@ -2,8 +2,8 @@
 ************************************************
  klasa:     Znaki
  opis:      klasa implementuje narzędzia do zmiennych typu łańcuchowego (string)
- metody:    licz_samogloski - liczba całkowita oznaczająca ilość samogłosek występujących w tekście
-            usun_powtorzenia_obok_siebie - łańcuch wejściowy z usuniętymi znakami występującymi obok siebie
+ metody:    licz_samogloski - zwraca liczbę całkowita oznaczająca ilość samogłosek występujących w tekście
+            usun_powtorzenia_obok_siebie - zwraca łańcuch wejściowy z usuniętymi znakami występującymi obok siebie lub ciąg pusty
  autor:     12345678910
 ************************************************
 '''
@@ -20,22 +20,17 @@ class Znaki:
         return samogloski_count
     @staticmethod
     def usun_powtorzenia_obok_siebie(text:str) -> str:
-        lancuch = ""
+        lancuch = text[0]
         if len(text) == 0:
             return ""
-        last_letter = ""
+        last_letter = text[0]
         for letter in text:
-            if last_letter == "":
+            if letter == last_letter:
                 last_letter = letter
-                lancuch += letter
                 continue
             else:
-                if letter == last_letter:
-                    last_letter = letter
-                    continue
-                else:
-                    last_letter = letter
-                    lancuch += letter
+                last_letter = letter
+                lancuch += letter
         return lancuch
 if __name__ == "__main__":
     tekst = input("Podaj tekst: ")
