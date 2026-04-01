@@ -1,10 +1,10 @@
 import random
 class Klasa:
-    __lista = []
-    __length_of_lista = len(__lista)
+    __lista: list[int] = []
+    __length_of_lista: int = len(__lista)
     def __init__(self, size):
-        Klasa.__length_of_lista = size
-        Klasa.__lista = [random.randint(1, 1000) for _ in range(size)]
+        Klasa.__length_of_lista: int = size
+        Klasa.__lista: list[int] = [random.randint(1, 1000) for _ in range(size)]
     @classmethod
     def show_elements(cls):
         [print(f"{i}: {cls.__lista[i]}") for i in range(len(cls.__lista))]
