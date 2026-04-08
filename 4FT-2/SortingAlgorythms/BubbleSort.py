@@ -13,4 +13,4 @@ class BubbleSort:
                     print("Zamiania: ", tablica[j], tablica[j + 1])
         return tablica
 if __name__ == "__main__":
-    print(BubbleSort.sortuj([5, 1, 4, 8]))
+    print(BubbleSort.sortuj(BubbleSort.generuj_tablice(5)))
