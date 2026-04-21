@@ -20,7 +20,6 @@ class QuickSort:
         right_arr = QuickSort.sortuj(higher)
         return left_arr + equal + right_arr
 if __name__ == "__main__":
-    tablica = QuickSort.generuj_tablice(999999)
+    tablica = QuickSort.generuj_tablice(9)
     print(tablica)
-    QuickSort.sortuj(tablica)
-    print(tablica)
+    print(QuickSort.sortuj(tablica))

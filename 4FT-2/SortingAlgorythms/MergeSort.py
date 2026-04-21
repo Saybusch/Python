@@ -10,7 +10,7 @@ class MergeSort:
         n2 = right - mid
         leftArr = array[left:left + n1]
         rightArr = array[mid+1:mid+1+n2]
-        i = 0; j = 0; k = left
+        i = j = 0; k = left
         while i < n1 and j < n2:
             if leftArr[i] <= rightArr[j]:
                 array[k] = leftArr[i]
@@ -36,10 +36,8 @@ class MergeSort:
         MergeSort.sortuj(left, middle)
         MergeSort.sortuj(middle + 1, right)
         MergeSort.conquer(left, middle, right)
-
-
 if __name__ == "__main__":
-    array = MergeSort.generuj_tablice(999999)
+    array = MergeSort.generuj_tablice(99)
     print(array)
     MergeSort.sortuj(0, len(array) - 1)
     print(array)
