@@ -4,7 +4,6 @@ class WyszukiwanieNapisow:
         WyszukiwanieNapisow.napisy = napisy
     @classmethod
     def zawiera(cls, find) -> bool:
-        print(cls.napisy)
         for el in cls.napisy:
             if el == find:
                 return True
