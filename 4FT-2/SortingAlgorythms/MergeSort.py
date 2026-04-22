@@ -29,7 +29,6 @@ class MergeSort:
             k += 1
     @staticmethod
     def sortuj(left, right):
-        global array
         if left >= right:
             return
         middle = left + (right - left) // 2
