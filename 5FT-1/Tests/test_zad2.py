@@ -7,7 +7,7 @@ class TestCiagGeometryczny(unittest.TestCase):
         self.assertEqual(ciag.kolejne_wyrazy(3), [2, 4, 8])
     def test_ilorazUlamek(self):
         ciag = CiagGeometryczny(8, 0.5)
-        self.assertEqual(ciag.kolejne_wyrazy(3), [8, 4, 2])
+        self.assertEqual(ciag.kolejne_wyrazy(3), [8.0, 4.0, 2.0])
     def test_ilorazUjemny(self):
         ciag = CiagGeometryczny(2, -2)
         self.assertEqual(ciag.kolejne_wyrazy(3), [2, -4, 8])
